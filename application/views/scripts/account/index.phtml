@@ -1,0 +1,29 @@
+<br /><br />
+<div id="view-content">
+	<h2>Account</h2>
+</div>
+<a href="<?php echo $this->url(array('controller' => 'account','action' => 'add'));?>">Add new account</a>
+<table width="500" cellpadding="12">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>username</th>
+      <th>password</th>
+      <th>option</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach($this->listAccounts as $item){ ?>
+    <tr>
+      <td align="center"><?php echo $item['id'] ?></td>
+      <td align="center"><?php echo $item['username'] ?></td>
+      <td align="center"><?php echo $item['password'] ?></td>
+      <td align="center">
+        <a href="<?php echo $this->url(array('controller' => 'account','action' => 'edit','id'=>$item['id']))?>">Edit</a>
+        <a href="<?php echo $this->url(array('controller' => 'account','action' => 'delete','id'=>$item['id']))?>" onclick="return confirm('Are you sure ?')">Delete</a>
+      </td>
+    </tr>
+    <?php } ?>
+  </tbody>
+</table>
+

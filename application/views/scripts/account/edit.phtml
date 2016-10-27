@@ -1,0 +1,10 @@
+<h3>Edit new account</h3>
+<form action="<?php echo $this->url(array('controller' => 'account','action' => 'processedit'))?>" method="post">
+  <h4>Username</h4>
+  <?php echo $this->account->username?>
+  <input type="hidden" name="username" value="<?php echo $this->account->username?>"><br>
+  <h4>Password</h4>
+  <input type="text" name="password"><br><br>
+  <input type="submit" value="Save">
+  <input type="submit" value="Back" onClick="history.go(-1);">
+</form>
